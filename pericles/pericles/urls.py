@@ -21,19 +21,20 @@ from django.conf.urls.static import static
 from . import views, Hod_Views, Staff_Views, Student_Views
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('base/', views.BASE, name='base'),
+                path('admin/', admin.site.urls),
+                path('base/', views.BASE, name='base'),
 
-                  # Login Path
-                  path('', views.LOGIN, name='login'),
-                  path('doLogin', views.doLogin, name='doLogin'),
-                  path('doLogout', views.doLogout, name='logout'),
+                # Login Path
+                path('', views.LOGIN, name='login'),
+                path('doLogin', views.doLogin, name='doLogin'),
+                path('doLogout', views.doLogout, name='logout'),
 
-                  # profile update
-                  path('profile', views.PROFILE, name='profile'),
-                  path('profile/update', views.PROFILE_UPDATE, name='profile_update'),
+                # profile update
+                path('profile', views.PROFILE, name='profile'),
+                path('profile/update', views.PROFILE_UPDATE, name='profile_update'),
 
-                  # This is HOD panel urls
-                  path('hod/home', Hod_Views.HOME, name='hod_home'),
+                # This is HOD panel urls
+                path('hod/home', Hod_Views.HOME, name='hod_home'),
+                path('hod/student/add', Hod_Views.ADD_STUDENT, name= 'add_student')
 
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
