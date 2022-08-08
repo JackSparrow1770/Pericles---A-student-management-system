@@ -21,20 +21,26 @@ from django.conf.urls.static import static
 from . import views, Hod_Views, Staff_Views, Student_Views
 
 urlpatterns = [
-                path('admin/', admin.site.urls),
-                path('base/', views.BASE, name='base'),
+                  path('admin/', admin.site.urls),
+                  path('base/', views.BASE, name='base'),
 
-                # Login Path
-                path('', views.LOGIN, name='login'),
-                path('doLogin', views.doLogin, name='doLogin'),
-                path('doLogout', views.doLogout, name='logout'),
+                  # Login Path
+                  path('', views.LOGIN, name='login'),
+                  path('doLogin', views.doLogin, name='doLogin'),
+                  path('doLogout', views.doLogout, name='logout'),
 
-                # profile update
-                path('profile', views.PROFILE, name='profile'),
-                path('profile/update', views.PROFILE_UPDATE, name='profile_update'),
+                  # profile update
+                  path('profile', views.PROFILE, name='profile'),
+                  path('profile/update', views.PROFILE_UPDATE, name='profile_update'),
 
-                # This is HOD panel urls
-                path('hod/home', Hod_Views.HOME, name='hod_home'),
-                path('hod/student/add', Hod_Views.ADD_STUDENT, name= 'add_student')
+                  # This is HOD panel urls
+                  path('hod/home', Hod_Views.HOME, name='hod_home'),
+                  path('hod/student/add', Hod_Views.ADD_STUDENT, name='add_student'),
+                  path('hod/student/view', Hod_Views.VIEW_STUDENT, name='view_student'),
+                  path('staff/home', Staff_Views.HOME, name='staff_home'),
+                  path('student/home', Student_Views.HOME, name='student_home'),
+                  path('staff/add', Staff_Views.ADD_TEACHER, name='add_teacher'),
+                  path('staff/view', Staff_Views.VIEW_TEACHER, name='view_teacher'),
+                  path('staff/edit', Staff_Views.EDIT_TEACHER, name='edit_teacher'),
 
-                ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

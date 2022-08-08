@@ -7,25 +7,28 @@
                      <li class="menu-title">
                         <span>Main Menu</span>
                      </li>
-                     <li>
-                        <a href="{% url 'hod_home' %}"><i class="fa-solid fa-school"></i> <span>Dashboard</span></a>
+                     <li class="submenu">
+                        <a href="#"><i class="fa-solid fa-school"></i> <span>Dashboard</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'hod_home' %}">Admin Dashboard</a></li>
+                           <li><a href="{% url 'staff_home' %}">Teacher Dashboard</a></li>
+                           <li><a href="{% url 'student_home' %}">Student Dashboard</a></li>
+                        </ul>
                      </li>
                      <li class="submenu">
                         <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
                         <ul>
 
                            <li><a href="{%url 'add_student'%}">Add student</a></li>
-                           <li><a href="student-details.html">View student</a></li>
-
+                           <li><a href="{%url 'view_student'%}">View student</a></li>
                         </ul>
                      </li>
                      <li class="submenu">
                         <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
                         <ul>
 
-                           <li><a href="teacher-details.html">Staff View</a></li>
-                           <li><a href="add-teacher.html">Staff Add</a></li>
-                           <li><a href="edit-teacher.html">Staff Edit</a></li>
+                           <li><a href="{%url 'add_teacher'%}">Staff Add</a></li>
+                           <li><a href="{%url 'view_teacher'%}">Staff View</a></li>
                         </ul>
                      </li>
                      <li class="submenu">
